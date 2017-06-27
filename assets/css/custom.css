@@ -1,0 +1,118 @@
+.game-title{
+   text-align: center;
+   color: cornflowerblue;
+   font-weight: bold;
+}
+.category{
+   background-color: #3F48CC;
+   border: black 7px solid;
+   border-right-width: 15px;
+   padding: 14px;
+   color: white;
+   font-weight: bold;
+   font-size: 15px;
+}
+.q-default{
+   border: black 7px solid;
+   padding: 11px;
+   color: #FFC90E;
+   font-weight: bold;
+   background-color: #3F48CC;
+   text-align: center;
+   font-size: 19px;
+   cursor: pointer;
+}
+.q-default:hover{
+   -webkit-transition: all .5s;
+   transition: all .5s;
+   background-color:#3F48CC;
+   box-shadow: inset 0px 0px 45px whitesmoke;
+}
+.q-active{}
+.q-inactive{
+   border: black 7px solid;
+   padding: 11px;
+   color: #FFC90E;
+   font-weight: bold;
+   background-color: #3F48CC;
+   text-align: center;
+   font-size: 19px;
+   opacity: .5;
+}
+
+.p-score-box{
+   background-color: black;
+   color: yellow;
+   font-size: 18px;
+   font-family: monospace;
+   border: 4px solid gray;
+
+}
+.p-score-box-score{
+   text-align:right;
+}
+.p-name-box{
+   background-color: #303EFF;
+   color: white;
+   font-weight: bold;
+   word-wrap: normal;
+   font-size: 19px;
+   text-align: center;
+   height: 86px;
+   border: 8px solid gray;
+}
+.p-active{
+   box-shadow: 0px 0px 61px #0043FF;
+   opacity: 1;
+}
+.p-inactive{
+   opacity:.7;
+}
+
+
+.question-container{
+   background-color:#3F48CC;
+   padding:20px;
+   border: 10px solid;
+}
+.question-box{
+   color:white;
+   border-radius: 5px;
+   font-size:20px;
+}
+.question-timer{
+   border-radius: 5px;
+   border:4px solid #FFC90E;
+   color:white;
+   font-size:30px;
+   text-align:center;
+}
+.question-option-box{
+   background-color:#3F48CC;
+   padding:15px;
+}
+.question-option{
+   border-radius:10px;
+   cursor:pointer;
+   background-color:white;
+   border:3px solid #FFC90E;
+   color:black;
+   font-size:16px;
+}
+.question-option:hover{
+   -webkit-transition: all .5s;
+   transition: all .5s;
+   box-shadow: 0px 0px 20px whitesmoke;
+}
+
+.o-active{}
+.o-inactive{
+  opacity: .5;
+}
+
+.show{
+  display:visible;
+}
+.hide{
+   display:hidden;
+}

@@ -1,0 +1,1 @@
+var atmGame = angular.module('atmGame',['ui.bootstrap','ngCookies']);

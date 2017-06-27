@@ -1,0 +1,21 @@
+<div class="container question-container">
+   <div class="row">
+      <div class="col-md-10 question-box">{{question.question}}</div>
+      <div class="col-md-2 question-timer" ng-init="countDown()">
+         <div class='row'>Timer</div>
+         <div class='row'>{{countdown}}</div>
+      </div>
+   </div>
+   <div class="row question-option-box" ng-repeat='option in question.options track by $index' ng-class="option.disabled ? 'o-inactive' : 'o-active'">
+      <button class="col-md-10 question-option" ng-click='checkAnswer(option)' ng-disabled='option.disabled'>{{option.text}}</button>
+   </div>
+   <div class='row'>
+      <h1 style="color:white;">{{result}}</h1>
+   </div>
+  <div class="row">
+    <div class='col-md-3' ng-class='{"hide":state !== "correct", "show":state==="correct"}'><button class='btn btn-default' ng-click='award()'>Close</button></div>
+    <div class='col-md-3' ng-class='{"hide":state !== "no_more", "show":state==="no_more"}'><button class='btn btn-default' ng-click='endturn()'>Close</button></div>
+    <div class='col-md-3' ng-class='{"hide":state !== "incorrect", "show":state==="incorrect"}'><button class='btn btn-default' ng-click='tryagain()'>Try this question</button></div>
+    <div class='col-md-3' ng-class='{"hide":state !== "incorrect", "show":state==="incorrect"}'><button class='btn btn-default' ng-click='endturn()'>Choose a different question</button></div>
+  </div>
+</div>

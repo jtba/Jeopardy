@@ -1,0 +1,60 @@
+<html ng-app='atmGame'>
+   <head>
+      <title>Disheopardy</title>
+      <link rel='stylesheet' type='text/css' href='assets/css/bootstrap.min.css'>
+      <link rel='stylesheet' type='text/css' href='assets/css/bootstrap-theme.min.css'>
+      <link rel='stylesheet' type='text/css' href='assets/css/custom.css'>
+
+      <script src='assets/js/jquery-2.2.2.min.js'></script>
+      <script src='assets/js/bootstrap.min.js'></script>
+      <script src='assets/js/angular.min.js'></script>
+      <script src='assets/js/ui-bootstrap-tpls-1.2.5.min.js'></script>
+      <script src='assets/js/angular-cookies.min.js'></script>
+      <script src='app/app.module.js'></script>
+      <script src='app/app.controller.js'></script>
+      <script src='app/questionCtrl.js'></script>
+      
+   </head>
+   <body ng-controller='atmGameCtrl' ng-init="GameManager('nextTeam');GameManager('startGame')">
+      <div class='container-fluid'>
+         <div class='row'>
+            <div class='col-md-12'><h1 class='h game-title'>Disheopardy</h1></div>
+         </div>
+         <div class='row'>
+            <div class='col-md-12'>
+               <div class='container'>
+                  <div class='row' ng-repeat='category in data.categories track by $index'>
+                     <div class='col-md-3 category'>{{category.title}}</div>
+                     <button class='col-md-2' ng-repeat='question in category.data track by $index' ng-click='show_question(question)' ng-disabled='question.disabled' ng-class="question.disabled ? 'q-inactive' : 'q-default'">{{question.level}}</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br><br>
+         <div class='row'>
+         </div>
+         <!-- Player Box Row -->
+         <div class='row'>
+            <div class='col-md-12'>
+               <div class='container'>
+                  <div class='row'>
+                     <div class='col-md-1'></div>
+                     <div class='col-md-2' style='margin-right:10px' ng-repeat='team in data.players track by $index' ng-class="team.is_turn ? 'p-active' : 'p-inactive'">
+                        <div class='row p-score-box'>
+                           <div class='col-md-3'>$</div>
+                           <div class='col-md-9 p-score-box-score'>{{team.score}}</div>
+                        </div>
+                        <div class='row'>
+                           <div class='col-md-12 p-name-box'>
+                              {{team.name}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- End of Player Box Row -->
+      </div>
+   </body>
+</html>
